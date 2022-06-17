@@ -153,7 +153,7 @@
     <string>12828282999999</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_8">
+  <widget class="QLabel" name="lbl_message">
    <property name="geometry">
     <rect>
      <x>10</x>

@@ -23,14 +23,14 @@
     </rect>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="WTabDeviceInfo" name="tab">
     <attribute name="title">
      <string>Device Info</string>
     </attribute>
    </widget>
-   <widget class="QWidget" name="tab_2">
+   <widget class="WTabSignalStrength" name="tab_2">
     <attribute name="title">
      <string>Tab 2</string>
     </attribute>
@@ -42,6 +42,12 @@
    <class>WTabDeviceInfo</class>
    <extends>QWidget</extends>
    <header location="global">WTabDeviceInfo.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>WTabSignalStrength</class>
+   <extends>QWidget</extends>
+   <header location="global">WTabSignalStrength.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

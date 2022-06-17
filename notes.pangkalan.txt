@@ -1,0 +1,6 @@
+add stock
+scan dari mybb kemudian masuk di stock vsm-pangkalan
+
+buffer => jumlah blast/bc taxi dari DA
+total antrian armada & penumpang adalah total hari ini
+
