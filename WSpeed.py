@@ -31,10 +31,30 @@ class WSpeed(QtWidgets.QMainWindow):
             self.lbl_message.setText("Failed to connect mqtt broker")
         
         client.subscribe("/device/sync/time")
+        client.subscribe("/device/resp/tracking/111")
     def SubscirbeMessagePayload(self,client, userdata, message):
         if message.topic == "/device/sync/time":
             strMessage = message.payload.decode("utf-8")
             jsonMessage = json.loads(strMessage)
             self.lbl_date.setText(jsonMessage["date"])
             self.lbl_time.setText(jsonMessage["time"])
+        elif message.topic == "/device/resp/tracking/111":
+            strMessage = message.payload.decode("utf-8")
+            jsonMessage = json.loads(strMessage)
+            self.gauge_widget.updateValue(jsonMessage["speed"])
+            if jsonMessage["is_recorded"] == True:
+                self.lbl_status_val.setText(jsonMessage["status"])
+            else:
+                self.lbl_status_val.setText(jsonMessage["status"])
             
+            temp = str(jsonMessage["temp"])
+            self.lbl_temp.setText("Temp: {0} C".format(temp))
+            self.lbl_lat.setText("Lat: {0}".format(
+                str(jsonMessage["lat"])
+            ))
+            self.lbl_long.setText("Lng: {0}".format(
+                str(jsonMessage["long"])
+            ))
+            self.lbl_signal.setText("Signal: {0} dBm".format(
+                str(jsonMessage["signal"])
+            ))
